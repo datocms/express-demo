@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include head.ejs %>
+<body>
+    <% include header.ejs %>
+
+      <% include hero.ejs %>
+
+    <!-- ***** Services Area Start ***** -->
+    <div class="sonar-services-area section-padding-100-50">
+        <div class="container">
+            <div class="row">
+
+                <%
+                var i = 300;
+                data.services.forEach(function(service){
+
+                    if(i>900)
+                        i=300
+                    else
+                        i+=300;
+                %>
+
+                <!-- Single Services Area -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-services-area wow fadeInUp" data-wow-delay="<%= i %>ms">
+                        <img src="<%= service.image.url %>" alt="">
+                        <h4><%= service.title %></h4>
+                        <p><%= service.description %></p>
+                    </div>
+                </div>
+
+                 <%  }); %>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- ***** Services Area End ***** -->
+
+    <div class="sonar-testimonials-area bg-img" style="background-image: url(img/bg-img/tes.jpg);">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-10 col-lg-7">
+                    <div class="testimonial-content bg-white">
+                        <div class="section-heading text-left">
+                            <div class="line"></div>
+                            <h2>Testimonials</h2>
+                        </div>
+
+                        <div class="testimonial-slides owl-carousel">
+                            <% data.testimonials.forEach(function(t){ %>
+                            <div class="single-tes-slide">
+                                  <p><%= t.content %></p>
+                                <h6><%= t.name %></h6>
+                            </div>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cool-facts-area section-padding-100-0">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <%
+                var ii = 250;
+                data.counters.forEach(function(service){
+                    ii+=250;
+                %>
+                    <!-- Single Cool Fact-->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-cool-fact-area text-center mb-100 wow fadeInUpBig" data-wow-delay="<%= ii %>ms">
+                            <img src="<%= service.image.url %>" alt="">
+                            <h2><span class="counter"><%= service.value %></span></h2>
+                            <p><%= service.title %></p>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+
+     <%- include('cta.ejs', { dream: true, gray:true }); %>
+    <%- include('foot.ejs', {gray:true, dream:true, dots:true}); %>
+
+</body>
+
+</html>

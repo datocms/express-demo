@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include head.ejs %>
+<body>
+    <% include header.ejs %>
+
+    <!-- ***** Hero Area Start ***** -->
+    <div class="hero-area d-flex align-items-center">
+        <!-- Hero Thumbnail -->
+        <div class="hero-thumbnail equalize bg-img" style="background-image: url(<%= data.portfolioPage.heroImage.url %>?h=1100);"></div>
+
+        <!-- Hero Content -->
+        <div class="hero-content equalize">
+            <div class="container-fluid h-100">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-12 col-md-8">
+                        <div class="line"></div>
+                        <h2><%= data.portfolioPage.title %></h2>
+                        <p><%= data.portfolioPage.content %></p>
+                        <a href="#" class="btn sonar-btn white-btn">contact me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Menu -->
+        <div class="sonar-portfolio-menu">
+            <div class="text-center portfolio-menu">
+                <button class="btn active" data-filter="*">All</button>
+                 <% data.tags.forEach(function(tag){ %>
+                    <button class="btn" data-filter=".<%= tag.name.toLowerCase() %>"><%= tag.name %></button>
+                 <% }); %>
+
+            </div>
+        </div>
+    </div>
+    <!-- ***** Hero Area End ***** -->
+
+    <!-- ****** Gallery Area Start ****** -->
+    <section class="sonar-projects-area" id="projects">
+        <div class="container-fluid">
+            <div class="row sonar-portfolio">
+
+                <%
+                var i = 300;
+                data.works.forEach(function(work){
+                    if(i>900)
+                        i=300
+                    else
+                        i+=200;
+
+                    var cns = "";
+                    work.tags.forEach(function(tag){
+                        cns+=" "+tag.name.toLowerCase()
+                    })
+                %>
+
+                <!-- Single gallery Item -->
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item <%= cns %> wow fadeInUpBig" data-wow-delay="<%= i %>ms">
+                    <a class="gallery-img" href="<%= work.image.url %>?w=600"><img src="<%= work.image.url %>?w=600" alt=""></a>
+                    <!-- Gallery Content -->
+                    <div class="gallery-content">
+                        <h4><%= work.title %></h4>
+                        <p><%= work.content %></p>
+                    </div>
+                </div>
+                <% }); %>
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <a href="#" class="btn sonar-btn">Load More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ****** Gallery Area End ****** -->
+
+    <%- include('foot.ejs', {gray:false, dream:true, dots:true }); %>
+
+</body>
+
+</html>
