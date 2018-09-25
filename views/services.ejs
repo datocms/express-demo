@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<% include head.ejs %>
+<%- include('head.ejs',  { seo:data.page.seo, favicon:data.seo.favicons}); %>
 <body>
     <% include header.ejs %>
 
-      <% include hero.ejs %>
+    <!-- ***** Hero Area Start ***** -->
+    <div class="hero-area d-flex align-items-center">
+
+        <!-- Hero Thumbnail -->
+         <div class="hero-thumbnail equalize bg-img" style="background-image: url(<%= data.page.heroImage.url %>?h=1100);"></div>
+
+        <!-- Hero Content -->
+        <div class="hero-content equalize">
+            <div class="container-fluid h-100">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-12 col-md-8">
+                        <div class="line"></div>
+                        <h2><%= data.page.title %></h2>
+                        <p><%= data.page.content %></p>
+                        <a href="#" class="btn sonar-btn white-btn">contact me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Hero Area End ***** -->
+
 
     <!-- ***** Services Area Start ***** -->
     <div class="sonar-services-area section-padding-100-50">

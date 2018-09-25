@@ -6,7 +6,6 @@ import routes from "./routes";
 import sassMiddleware from "node-sass-middleware";
 const { DATO_API_TOKEN, PORT = 3000 } = process.env;
 const app = express();
-
 const graphiql = `https://site-api.datocms.com/graphiql?apitoken=${DATO_API_TOKEN}`;
 
 app.set("views", path.join(__dirname, "../views"));
@@ -23,10 +22,7 @@ app.use(
     sourceMap: false
   })
 );
-
 app.use(express.static(path.join(__dirname, "../public")));
-
-// Routes
 app.use("/", routes);
 
 // Catch 404 and forward to error handler

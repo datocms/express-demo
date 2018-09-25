@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<% include head.ejs %>
+<%- include('head.ejs',  { seo:data.aboutPage.seo, favicon:data.seo.favicons}); %>
 <body>
     <% include header.ejs %>
 

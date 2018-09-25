@@ -3,11 +3,19 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <!-- Title  -->
-    <title><%= title %></title>
-    <!-- Favicon  -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <!-- The above  meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <% seo.forEach(function(item){ %>
+        <%if(item.tag=="title"){ %>
+            <title><%= item.content %></title>
+        <%}else{ %>
+            <meta name="<%= item.attributes.property %>" content="<%= item.attributes.content %>"  />
+        <%}%>
+    <% }); %>
+    <% favicon.forEach(function(item){ %>
+            <link rel="<%= item.attributes.rel%>" type="<%= item.attributes.type%>"   href="<%= item.attributes.href%>"  />
+    <% }); %>
     <!-- Style CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
+

@@ -45,8 +45,9 @@ app.use((0, _nodeSassMiddleware2.default)({
   src: _path2.default.join(__dirname, "../public/scss"),
   dest: _path2.default.join(__dirname, "../public"),
   indentedSyntax: false, // true = .sass and false = .scss
-  sourceMap: true
+  sourceMap: false
 }));
+
 app.use(_express2.default.static(_path2.default.join(__dirname, "../public")));
 
 // Routes

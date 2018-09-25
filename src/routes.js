@@ -4,7 +4,7 @@ import * as queries from "./queries";
 
 const routes = Router();
 const { DATO_API_TOKEN } = process.env;
-const endpoint = "https://site-api.datocms.com/graphql";
+const endpoint = "https://graphql.datocms.com/";
 const client = new GraphQLClient(endpoint, {
   headers: {
     "Content-Type": "application/json",
