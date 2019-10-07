@@ -1,4 +1,4 @@
-const pageSeo = `seo: seoMetaTags {
+const pageSeo = `seo: _seoMetaTags {
       tag
       attributes
       content

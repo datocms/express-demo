@@ -16,7 +16,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 const routes = (0, _express.Router)();
 const { DATO_API_TOKEN } = process.env;
-const endpoint = "https://site-api.datocms.com/graphql";
+const endpoint = "https://graphql.datocms.com/";
 const client = new _graphqlRequest.GraphQLClient(endpoint, {
   headers: {
     "Content-Type": "application/json",

@@ -32,7 +32,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const { DATO_API_TOKEN, PORT = 3000 } = process.env;
 const app = (0, _express2.default)();
-
 const graphiql = `https://site-api.datocms.com/graphiql?apitoken=${DATO_API_TOKEN}`;
 
 app.set("views", _path2.default.join(__dirname, "../views"));
@@ -47,10 +46,7 @@ app.use((0, _nodeSassMiddleware2.default)({
   indentedSyntax: false, // true = .sass and false = .scss
   sourceMap: false
 }));
-
 app.use(_express2.default.static(_path2.default.join(__dirname, "../public")));
-
-// Routes
 app.use("/", _routes2.default);
 
 // Catch 404 and forward to error handler

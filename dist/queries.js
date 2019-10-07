@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+const pageSeo = `seo: _seoMetaTags {
+      tag
+      attributes
+      content
+    }`;
+
 const getGeneralInfo = `{
   generalInfo {
     siteName
@@ -13,8 +19,10 @@ const getGeneralInfo = `{
     }
   }
   seo: _site {
-    favicon {
-      url
+    favicons: faviconMetaTags {
+      attributes
+      tag
+      content
     }
     globalSeo {
       siteName
@@ -32,12 +40,15 @@ const getGeneralInfo = `{
 }`;
 
 const aboutQuery = `{
+
   aboutPage {
+    ${pageSeo}
     title
     heroImage {
       url
     }
     content
+
   }
   skillGroups: allSkillGroups(orderBy: [position_ASC]) {
     title
@@ -53,12 +64,20 @@ const aboutQuery = `{
 }`;
 
 const servicesQuery = `{
-  hero: servicesPage {
+  page: servicesPage {
+    ${pageSeo}
     title
     heroImage {
       url
     }
     content
+
+    seoMetaTags {
+      tag
+      attributes
+      content
+    }
+
   }
   services: allServices(orderBy: [position_ASC]) {
     title
@@ -82,6 +101,7 @@ const servicesQuery = `{
 
 const contactQuery = `{
   contactPage {
+    ${pageSeo}
     title
     heroImage {
       url
@@ -97,6 +117,7 @@ const contactQuery = `{
 
 const portfolioQuery = `{
   portfolioPage {
+    ${pageSeo}
     title
     heroImage {
       url
@@ -121,6 +142,7 @@ const portfolioQuery = `{
 
 const getHome = `{
   homepage {
+    ${pageSeo}
     quote
     slides {
       url

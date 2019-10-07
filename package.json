@@ -16,21 +16,21 @@
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "body-parser": "^1.18.2",
-    "ejs": "^2.5.9",
-    "express": "^4.16.2",
-    "graphql-request": "^1.5.2",
-    "morgan": "^1.9.0",
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "graphql-request": "^1.8.2",
+    "morgan": "^1.9.1",
     "node-sass-middleware": "^0.11.0",
-    "pug": "^2.0.3",
-    "rimraf": "^2.6.2"
+    "pug": "^2.0.4",
+    "rimraf": "^3.0.0"
   },
   "devDependencies": {
     "babel-register": "^6.26.0",
-    "dotenv": "^4.0.0",
-    "nodemon": "^1.12.1",
-    "supertest": "^3.0.0"
+    "dotenv": "^8.1.0",
+    "nodemon": "^1.19.3",
+    "supertest": "^4.0.2"
   },
   "babel": {
     "presets": [
