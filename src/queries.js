@@ -14,7 +14,7 @@ const getGeneralInfo = `{
     }
   }
   seo: _site {
-    favicons: faviconMetaTags {
+    favicon: faviconMetaTags {
       attributes
       tag
       content
