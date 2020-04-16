@@ -6,7 +6,7 @@ import routes from "./routes";
 import sassMiddleware from "node-sass-middleware";
 const { DATO_API_TOKEN, PORT = 3000 } = process.env;
 const app = express();
-const graphiql = `https://site-api.datocms.com/graphiql?apitoken=${DATO_API_TOKEN}`;
+const graphiql = `https://cda-explorer.datocms.com/?apitoken=${DATO_API_TOKEN}`;
 
 app.set("views", path.join(__dirname, "../views"));
 app.set("view engine", "ejs");
@@ -41,8 +41,8 @@ app.use((err, req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`)
-  console.log(`Test your query at  ${graphiql}`)
+  console.log(`Listening on port ${PORT}`);
+  console.log(`Test your query at  ${graphiql}`);
 });
 
 export default app;

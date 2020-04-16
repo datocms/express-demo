@@ -3,9 +3,5 @@
   "description": "A barebones Express app that shows how to fetch content from DatoCMS",
   "repository": "https://github.com/datocms/express-demo",
   "logo": "https://www.datocms-assets.com/205/1517846522-logo-dato-512_preview-1.png?h=150&w=150",
-  "keywords": ["express", "nodejs", "datocms", "graphql"],
-  "env": {
-    "DATO_API_TOKEN": "XXX"
-  }
+  "keywords": ["express", "nodejs", "datocms", "graphql"]
 }
-
