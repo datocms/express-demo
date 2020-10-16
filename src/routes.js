@@ -30,12 +30,16 @@ routes.get("/:page", (req, res) => {
   let page = req.params.page;
   getData(page).then(data => {
     res.render(page, { title: page, data });
+  }).catch(e => {
+    console.error(e);
   });
 });
 
 routes.get("/", (req, res) => {
   getData().then(data => {
     res.render("home", { title: "Home", data });
+  }).catch(e => {
+    console.error(e);
   });
 });
 

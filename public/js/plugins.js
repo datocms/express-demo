@@ -126,11 +126,12 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 			var firstProg = new Progress( firstCanvas );
 			var timer = setInterval(function() {
 				index++;
-				var canvas = self.bars[index].querySelector( "canvas" );
-				var prog = new Progress( canvas );
 				if( index == self.bars.length ) {
 						clearInterval( timer );
-				} 
+				} else {
+					var canvas = self.bars[index].querySelector( "canvas" );
+					var prog = new Progress( canvas );
+				}
 			}, self.tick * 100);
 		}
 	};

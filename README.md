@@ -19,4 +19,4 @@ You can find your [DatoCMS](https://datocms.com) API token in the Admin area > A
 
 #### `Install dependencies and run`
 
-Just run `yarn install` on your cloned project's folder, when type `yarn dev` to run your app in development mode.
+Just run `npm install` on your cloned project's folder, when type `npm run dev` to run your app in development mode.

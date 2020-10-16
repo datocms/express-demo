@@ -2,7 +2,7 @@
 <html lang="en">
 <%- include('head.ejs',  { seo:data.page.seo, favicon:data.seo.favicon}); %>
 <body>
-    <% include header.ejs %>
+    <%- include('header.ejs') %>
 
     <!-- ***** Hero Area Start ***** -->
     <div class="hero-area d-flex align-items-center">
@@ -59,7 +59,7 @@
     </div>
     <!-- ***** Services Area End ***** -->
 
-    <div class="sonar-testimonials-area bg-img" style="background-image: url(img/bg-img/tes.jpg);">
+    <div class="sonar-testimonials-area bg-img">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 col-md-10 col-lg-7">

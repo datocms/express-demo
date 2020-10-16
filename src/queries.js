@@ -66,13 +66,6 @@ const servicesQuery = `{
       url
     }
     content
-
-    seoMetaTags {
-      tag
-      attributes
-      content
-    }
-
   }
   services: allServices(orderBy: [position_ASC]) {
     title

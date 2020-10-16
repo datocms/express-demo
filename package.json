@@ -7,35 +7,35 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "dev": "nodemon src/index.js --exec \"node -r dotenv/config -r babel-register\"",
+    "dev": "nodemon src/index.js --exec \"node -r dotenv/config -r @babel/register\"",
     "clean": "rimraf dist",
     "build": "npm run clean && mkdir -p dist && babel src -s -D -d dist",
-    "postinstall": "yarn build"
+    "postinstall": "npm run build"
   },
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.1",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
     "body-parser": "^1.19.0",
-    "ejs": "^2.7.1",
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
-    "graphql-request": "^1.8.2",
+    "graphql": "^15.3.0",
+    "graphql-request": "^3.2.0",
     "morgan": "^1.9.1",
     "node-sass-middleware": "^0.11.0",
-    "pug": "^2.0.4",
     "rimraf": "^3.0.0"
   },
   "devDependencies": {
-    "babel-register": "^6.26.0",
+    "@babel/register": "^7.12.1",
     "dotenv": "^8.1.0",
-    "nodemon": "^1.19.3",
-    "supertest": "^4.0.2"
+    "nodemon": "^2.0.5"
   },
   "babel": {
     "presets": [
       [
-        "env",
+        "@babel/preset-env",
         {
           "targets": {
             "node": "current"
@@ -44,8 +44,8 @@
       ]
     ],
     "plugins": [
-      "transform-object-rest-spread",
-      "transform-class-properties"
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-object-rest-spread"
     ]
   }
 }
