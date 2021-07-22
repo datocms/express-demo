@@ -6,6 +6,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "start": "node dist/index.js",
     "dev": "nodemon src/index.js --exec \"node -r dotenv/config -r @babel/register\"",
     "clean": "rimraf dist",
@@ -25,7 +26,11 @@
     "graphql-request": "^3.2.0",
     "morgan": "^1.9.1",
     "node-sass-middleware": "^0.11.0",
+    "npm-force-resolutions": "^0.0.10",
     "rimraf": "^3.0.0"
+  },
+  "resolutions": {
+    "trim-newlines": "3.0.1"
   },
   "devDependencies": {
     "@babel/register": "^7.12.1",
