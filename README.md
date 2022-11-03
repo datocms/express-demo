@@ -1,3 +1,5 @@
+# ⛔️ DEPRECATED ⛔️
+
 This is a demo app that shows how to use DatoCMS content via GraphQL API inside an Express.js project.
 
 ## Setup the project
